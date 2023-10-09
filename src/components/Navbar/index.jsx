@@ -9,10 +9,71 @@ export default function Navbar() {
                     <nav>
                         <ul className="inline-flex items-center p-0 m-0">
                             <li className="min-w-[4.75rem] mr-[1.25rem]">
-                                
+                                <a className="text-[#ccd2de] transition-colors duration-500 flex items-center justify-center py-[0.25rem] px-[0.5rem] relative w-full font-medium text-[1rem] leading-[1.5rem] hover:text-white hover:bg-[#f0f2f71a] cursor-pointer">
+                                    Wallet
+                                </a>
+                            </li>
+                            <li className="min-w-[4.75rem] mr-[1.25rem]">
+                                <a className="text-[#ccd2de] transition-colors duration-500 flex items-center justify-center py-[0.25rem] px-[0.5rem] relative w-full font-medium text-[1rem] leading-[1.5rem] hover:text-white hover:bg-[#f0f2f71a] cursor-pointer">
+                                    Exchange
+                                </a>
+                            </li>
+                            <li className="min-w-[4.75rem] mr-[1.25rem]">
+                                <a className="text-[#ccd2de] transition-colors duration-500 flex items-center justify-center py-[0.25rem] px-[0.5rem] relative w-full font-medium text-[1rem] leading-[1.5rem] hover:text-white hover:bg-[#f0f2f71a] cursor-pointer">
+                                    Explorer
+                                </a>
+                            </li>
+                            <li className="min-w-[4.75rem] mr-[1.25rem]">
+                                <a className="text-[#ccd2de] transition-colors duration-500 flex items-center justify-center py-[0.25rem] px-[0.5rem] relative w-full font-medium text-[1rem] leading-[1.5rem] hover:text-white hover:bg-[#f0f2f71a] cursor-pointer">
+                                    Pay
+                                </a>
+                            </li>
+                            <li className="min-w-[4.75rem] mr-[1.25rem]">
+                                <a className="text-[#ccd2de] transition-colors duration-500 flex items-center justify-center py-[0.25rem] px-[0.5rem] relative w-full font-medium text-[1rem] leading-[1.5rem] hover:text-white hover:bg-[#f0f2f71a] cursor-pointer">
+                                    Institutional
+                                </a>
+                            </li>
+                            <li className="h-full relative cursor-pointer">
+                                <button className="bg-transparent border-none cursor-pointer flex items-center justify-center h-full py-0 px-[0.75rem] mr-[0.5rem]">
+                                <svg className="rounded-[4px] transition-colors duration-300 text-white" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M19 13.5C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5C18.4477 11.5 18 11.9477 18 12.5C18 13.0523 18.4477 13.5 19 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13.5C12.5523 13.5 13 13.0523 13 12.5C13 11.9477 12.5523 11.5 12 11.5C11.4477 11.5 11 11.9477 11 12.5C11 13.0523 11.4477 13.5 12 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 13.5C5.55228 13.5 6 13.0523 6 12.5C6 11.9477 5.55228 11.5 5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                </button>
+                                <div className="opacity-0 hidden pointer-events-none absolute my-0 mx-auto top-0 left-[-17.5rem] pt-[3rem] before:border-solid before:border-y-[0] before:border-x-[0.75rem] before:absolute before:top-[-0.75rem] before:left-[18.25rem] before:my-0 before:mx-auto before:w-[1.5rem] before:pt-[3rem]">
+                                    <nav className="bg-white rounded-[0.75rem] shadow-[rgba(103,113,133,0.4)_0.75rem_1.5rem_4rem] flex justify-between p-[1.5rem]">
+                                        <div className="mr-[1.25rem] w-[8.125rem]">
+                                            <p className="text-[#121d33] mb-[1.25rem] capitalize font-semibold text-[1.125rem] leading-[1.5rem] m-0">
+                                                Products
+                                            </p>
+                                            <ul>
+                                               <li className="mb-[1rem]">
+                                                    <a className="bg-transparent bg-no-repeat bg-[right_0.1875rem_top_0.5625rem] rounded-[0.25rem] text-[#677185] inline-flex items-center text-[1rem] leading-[1.5rem] my-0 mx-[-0.25rem] py-[0.25rem] px-[0.5rem] relative transition-colors duration-300 whitespace-nowrap">
+                                                        Wallet
+                                                    </a>
+                                               </li> 
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
                             </li>
                         </ul>
                     </nav>
+                </div>
+
+                <div className="w-full justify-end flex items-center">
+                    <div className="mr-[1.25rem] ml-auto max-w-[22rem] relative h-[2.75rem] flex items-center justify-center">
+                        <button className="flex justify-center items-center bg-[#ffffff1a] border-none p-0 text-white w-[2.75rem] h-[2.75rem] rounded-[2.75rem] transition-colors duration-300 ease-in-out hover:bg-[#ffffff40] hover:cursor-pointer">
+                            <svg height="19" viewBox="0 0 18 19" width="18"><path d="m559.179993 45.9010802c0-3.4003115-2.373108-5.56108-5.564608-5.56108-3.191501 0-5.565397 2.1674824-5.565397 5.56108 0 3.3935975 2.090012 5.568921 5.565397 5.568921s5.564608-2.1686096 5.564608-5.568921zm4.820007 9c0 .7572115-.627404 1.3846154-1.384615 1.3846154-.367789 0-.72476-.1514424-.973558-.4110577l-3.710337-3.6995193c-1.265625.876202-2.780048 1.3413462-4.316105 1.3413462-4.207933 0-7.615385-3.4074519-7.615385-7.6153846s3.407452-7.6153846 7.615385-7.6153846c4.207932 0 7.615384 3.4074519 7.615384 7.6153846 0 1.5360577-.465144 3.0504807-1.341346 4.3161057l3.710337 3.7103366c.248798.2487981.40024.6057692.40024.9735577z" fill="currentColor" fill-rule="evenodd" transform="translate(-546 -38)"></path></svg>
+                        </button>
+                    </div>
+                    <a className="mr-[1.25rem] h-11 text-[#121D33]">
+                        <button className="text-[14px] w-auto h-11 py-[10px] px-[14px] inline-flex justify-center items-center font-medium tracking-[0.01rem] leading-[144%] rounded-[0.5rem] border-[0.125rem] border-white cursor-pointer transition-all ease duration-300 whitespace-nowrap text-white bg-none hover:text-[#ccd2de] hover:border-[#ccd2de]">
+                            Log In
+                        </button>
+                    </a>
+                    <a className="mr-[1.25rem] h-11 text-[#121D33]">
+                        <button className="w-auto text-[14p] h-11 py-[10px] px-[14px] inline-flex justify-center items-center font-medium tracking-[0.01rem] leading-[144%] rounded-[0.5rem] border-[0.125rem] border-transparent cursor-pointer transition-all ease duration-300 whitespace-nowrap text-[#121d33] bg-white hover:bg-[#dfe3eb]">
+                            Sign Up
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
