@@ -1,4 +1,5 @@
 import WarningOnTopPage from "../src/layouts/WarningOnTopPage/index"
+import Main from "./components/Main"
 import Navbar from "./components/Navbar"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div>
       <WarningOnTopPage />
       <Navbar />
+      <Main />
     </div>
   )
 }

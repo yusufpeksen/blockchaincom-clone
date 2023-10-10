@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage : {
-        "right-arrow" : "url('src/assets/icon-chevron-right.svg')"
+        "right-arrow" : "url('src/assets/icon-chevron-right.svg')",
+        "hero-bg" : "url('src/assets/home-hero-gradient.svg')"
       },
       transitionProperty: {
         "background" : "background",

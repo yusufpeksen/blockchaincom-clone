@@ -90,7 +90,7 @@ export default function Navbar() {
                                                 Resources
                                             </p>
                                             <ul>
-                                               {Products.map(resource => 
+                                               {Resources.map(resource => 
                                                 <li key={resource.id} className="mb-[1rem]">
                                                     <a className="bg-transparent bg-no-repeat bg-[right_0.1875rem_top_0.5625rem] rounded-[0.25rem] text-[#677185] inline-flex items-center text-[1rem] leading-[1.5rem] my-0 mx-[-0.25rem] py-[0.25rem] px-[0.5rem] relative transition-colors duration-300 whitespace-nowrap hover:bg-right-arrow hover:bg-[#f0f2f7] hover:text-[#353f52] hover:pr-[1.25rem] hover:text-shadow">
                                                         {resource.name}
