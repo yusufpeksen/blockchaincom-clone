@@ -1,4 +1,23 @@
+import { useRef } from "react"
+import { useEffect } from "react"
+import { useState } from "react"
+
 export default function Navbar() {
+
+    const [searchVisible , setSearchVisible] = useState(false)
+
+    let searchRef = useRef();   
+
+    useEffect(() => {
+        let handler = (e) => {
+            if (!searchRef.current.contains(e.target)) {
+                setSearchVisible(false)
+            }
+        }
+
+        document.addEventListener("mousedown" , handler)
+    })
+
     return (
         <div className="top-10 flex my-0 mx-auto w-full z-[2] bg-[#121d33] fixed border-b-[1px] border-solid border-[#ffffff33]">
             <div className="relative box-content my-0 mx-auto max-w-[80rem] flex items-center justify-between py-0 px-[1rem] w-full h-[4.75rem]">
@@ -60,7 +79,73 @@ export default function Navbar() {
 
                 <div className="w-full justify-end flex items-center">
                     <div className="mr-[1.25rem] ml-auto max-w-[22rem] relative h-[2.75rem] flex items-center justify-center">
-                        <button className="flex justify-center items-center bg-[#ffffff1a] border-none p-0 text-white w-[2.75rem] h-[2.75rem] rounded-[2.75rem] transition-colors duration-300 ease-in-out hover:bg-[#ffffff40] hover:cursor-pointer">
+
+
+                        {
+                            searchVisible && 
+                            <div ref={searchRef} className="visible opacity-100 origin-[50%_50%_0px] bg-white rounded-[1rem] absolute top-0 right-0 overflow-hidden w-auto z-[1]">
+                            <div className="p-[0.5rem]">
+                                <div className="bg-[#f0f2f7] text-[#121515] border-none outline-none rounded-[0.5rem] w-full ps-[0.75rem] flex items-center gap-3 overflow-hidden">
+                                    <button className="bg-none border-none p-0 h-[1.5rem]">
+                                    <svg height="19" viewBox="0 0 18 19" width="18"><path d="m559.179993 45.9010802c0-3.4003115-2.373108-5.56108-5.564608-5.56108-3.191501 0-5.565397 2.1674824-5.565397 5.56108 0 3.3935975 2.090012 5.568921 5.565397 5.568921s5.564608-2.1686096 5.564608-5.568921zm4.820007 9c0 .7572115-.627404 1.3846154-1.384615 1.3846154-.367789 0-.72476-.1514424-.973558-.4110577l-3.710337-3.6995193c-1.265625.876202-2.780048 1.3413462-4.316105 1.3413462-4.207933 0-7.615385-3.4074519-7.615385-7.6153846s3.407452-7.6153846 7.615385-7.6153846c4.207932 0 7.615384 3.4074519 7.615384 7.6153846 0 1.5360577-.465144 3.0504807-1.341346 4.3161057l3.710337 3.7103366c.248798.2487981.40024.6057692.40024.9735577z" fill="currentColor" fill-rule="evenodd" transform="translate(-546 -38)"></path></svg>
+                                    </button>
+                                    <input className="border-none outline-none bg-transparent py-[0.625rem] pr-[0.75rem] pl-0 w-full text-[0.875rem] font-medium tracking-[0.01em] leading-[1.25rem]" autoComplete="off" placeholder="Search blocks, transactions, hash..." type="search" name="search" >
+                                        
+                                    </input>
+                                </div>  
+                                <div className="p-[0.5rem]">
+                                    <div className="">
+                                        <span className="block py-[0.625rem] px-0 text-[#50596b] border-b-[1px] border-solid border-[#f0f2f7] text-[0.75rem] font-normal leading-[1rem]">
+                                            Blocks
+                                        </span>
+                                        <ul className="">
+                                            <li className="border-b-[1px] border-solid border-[#f0f2f7]">
+                                                <a className="gap-[0.5rem] flex items-center cursor-pointer p-[0.625rem] bg-transparent text-[#121D33] hover:bg-[#f7f8fa]">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M0 4C0 1.79086 1.79086 0 4 0H16C18.2091 0 20 1.79086 20 4V16C20 18.2091 18.2091 20 16 20H4C1.79086 20 0 18.2091 0 16V4Z" fill="#F28B24"></path><rect width="16" height="16" transform="translate(2 2)" fill="#F28B24"></rect><path d="M16.0007 11.332H11.334V15.9987H16.0007V11.332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.66667 11.332H4V15.9987H8.66667V11.332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.0007 4H11.334V8.66667H16.0007V4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.66667 4H4V8.66667H8.66667V4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                                <span className="text-[0.75rem] font-normal leading-[1rem]">
+                                                    BTC Block
+                                                </span>
+                                                </a>
+                                            </li>
+                                            <li className="border-b-[1px] border-solid border-[#f0f2f7]">
+                                                <a className="gap-[0.5rem] flex items-center cursor-pointer p-[0.625rem] bg-transparent text-[#121D33] hover:bg-[#f7f8fa]">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M0 4C0 1.79086 1.79086 0 4 0H16C18.2091 0 20 1.79086 20 4V16C20 18.2091 18.2091 20 16 20H4C1.79086 20 0 18.2091 0 16V4Z" fill="#00B26B"></path><rect width="16" height="16" transform="translate(2 2)" fill="#00B26B"></rect><path d="M16.0007 11.332H11.334V15.9987H16.0007V11.332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.66667 11.332H4V15.9987H8.66667V11.332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.0007 4H11.334V8.66667H16.0007V4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.66667 4H4V8.66667H8.66667V4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                                <span className="text-[0.75rem] font-normal leading-[1rem]">
+                                                    BCH Block
+                                                </span>
+                                                </a>
+                                            </li>
+                                            <li className="border-b-[1px] border-solid border-[#f0f2f7]">
+                                                <a className="gap-[0.5rem] flex items-center cursor-pointer p-[0.625rem] bg-transparent text-[#121D33] hover:bg-[#f7f8fa]">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M0 4C0 1.79086 1.79086 0 4 0H16C18.2091 0 20 1.79086 20 4V16C20 18.2091 18.2091 20 16 20H4C1.79086 20 0 18.2091 0 16V4Z" fill="#7349F2"></path><rect width="16" height="16" transform="translate(2 2)" fill="#7349F2"></rect><path d="M16.0007 11.332H11.334V15.9987H16.0007V11.332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.66667 11.332H4V15.9987H8.66667V11.332Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.0007 4H11.334V8.66667H16.0007V4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.66667 4H4V8.66667H8.66667V4Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                                <span className="text-[0.75rem] font-normal leading-[1rem]">
+                                                    ETH Block
+                                                </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-[#f7f8fa] p-[0.5rem] flex gap-[0.75rem]">
+                                <a className="bg-[#f0f2f7] rounded-[0.5rem] py-[0.25rem] px-[0.75rem] transition-colors duration-300 ease-in-out text-[0.875rem] font-medium tracking-[0.01em] leading-[1.25rem] text-gray-900 hover:bg-[#dfe3eb]">
+                                    Prices
+                                </a>
+                                <a className="bg-[#f0f2f7] rounded-[0.5rem] py-[0.25rem] px-[0.75rem] transition-colors duration-300 ease-in-out text-[0.875rem] font-medium tracking-[0.01em] leading-[1.25rem] text-gray-900 hover:bg-[#dfe3eb]">
+                                    Blocks
+                                </a>
+                                <a className="bg-[#f0f2f7] rounded-[0.5rem] py-[0.25rem] px-[0.75rem] transition-colors duration-300 ease-in-out text-[0.875rem] font-medium tracking-[0.01em] leading-[1.25rem] text-gray-900 hover:bg-[#dfe3eb]">
+                                    transactions
+                                </a>
+                                <a className="bg-[#f0f2f7] rounded-[0.5rem] py-[0.25rem] px-[0.75rem] transition-colors duration-300 ease-in-out text-[0.875rem] font-medium tracking-[0.01em] leading-[1.25rem] text-gray-900 hover:bg-[#dfe3eb]">
+                                    Charts
+                                </a>
+                            </div>
+                        </div>
+
+                        }
+
+                        <button onClick={() => setSearchVisible(!searchVisible)} className="flex justify-center items-center bg-[#ffffff1a] border-none p-0 text-white w-[2.75rem] h-[2.75rem] rounded-[2.75rem] transition-colors duration-300 ease-in-out hover:bg-[#ffffff40] hover:cursor-pointer">
                             <svg height="19" viewBox="0 0 18 19" width="18"><path d="m559.179993 45.9010802c0-3.4003115-2.373108-5.56108-5.564608-5.56108-3.191501 0-5.565397 2.1674824-5.565397 5.56108 0 3.3935975 2.090012 5.568921 5.565397 5.568921s5.564608-2.1686096 5.564608-5.568921zm4.820007 9c0 .7572115-.627404 1.3846154-1.384615 1.3846154-.367789 0-.72476-.1514424-.973558-.4110577l-3.710337-3.6995193c-1.265625.876202-2.780048 1.3413462-4.316105 1.3413462-4.207933 0-7.615385-3.4074519-7.615385-7.6153846s3.407452-7.6153846 7.615385-7.6153846c4.207932 0 7.615384 3.4074519 7.615384 7.6153846 0 1.5360577-.465144 3.0504807-1.341346 4.3161057l3.710337 3.7103366c.248798.2487981.40024.6057692.40024.9735577z" fill="currentColor" fill-rule="evenodd" transform="translate(-546 -38)"></path></svg>
                         </button>
                     </div>
