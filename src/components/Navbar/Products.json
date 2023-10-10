@@ -1,0 +1,49 @@
+[
+
+        {
+            "id" : "1",
+            "name" : "Wallet"
+        },
+        {
+            "id" : "2",
+            "name" :"Exchange"
+        },
+        {
+            "id" : "3",
+            "name" : "Explorer"
+        },
+        {
+            "id" : "4",
+            "name" : "Pay"
+        },
+        {
+            "id" : "5",
+            "name" : "Institutional"
+        },
+        {
+            "id" : "6",
+            "name" : "Earn"
+        },
+        {
+            "id" : "7",
+            "name" : "Card"
+        },
+        {
+            "id" : "8",
+            "name" : "Learn"
+        },
+        {
+            "id" : "9",
+            "name" : "Prices"
+        },
+        {
+            "id" : "10",
+            "name" : "Charts"
+        },
+        {
+            "id" : "11",
+            "name" : "NFT"
+        }
+    
+
+]

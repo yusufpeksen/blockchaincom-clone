@@ -1,10 +1,22 @@
 import { useRef } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
+import Products from "./Products.json"
+import Resources from "./Resources.json"
+import Company from "./Company.json"
 
 export default function Navbar() {
 
     const [searchVisible , setSearchVisible] = useState(false)
+    const [moreNavVisible , setMoreNavVisible] = useState(false)
+
+    function handleMouseEnter() {
+        setMoreNavVisible(true)
+    }
+
+    function handleMouseLeave() {
+        setMoreNavVisible(false)
+    }
 
     let searchRef = useRef();   
 
@@ -52,22 +64,53 @@ export default function Navbar() {
                                     Institutional
                                 </a>
                             </li>
-                            <li className="h-full relative cursor-pointer">
+                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="h-full relative cursor-pointer">
                                 <button className="bg-transparent border-none cursor-pointer flex items-center justify-center h-full py-0 px-[0.75rem] mr-[0.5rem]">
                                 <svg className="rounded-[4px] transition-colors duration-300 text-white" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M19 13.5C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5C18.4477 11.5 18 11.9477 18 12.5C18 13.0523 18.4477 13.5 19 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13.5C12.5523 13.5 13 13.0523 13 12.5C13 11.9477 12.5523 11.5 12 11.5C11.4477 11.5 11 11.9477 11 12.5C11 13.0523 11.4477 13.5 12 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 13.5C5.55228 13.5 6 13.0523 6 12.5C6 11.9477 5.55228 11.5 5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                 </button>
-                                <div className="opacity-0 hidden pointer-events-none absolute my-0 mx-auto top-0 left-[-17.5rem] pt-[3rem] before:border-solid before:border-y-[0] before:border-x-[0.75rem] before:absolute before:top-[-0.75rem] before:left-[18.25rem] before:my-0 before:mx-auto before:w-[1.5rem] before:pt-[3rem]">
+                                
+                                <div className={`pointer-events-all absolute my-0 mx-auto top-0 left-[-17.5rem] pt-[3rem] w-[35rem] before:border-solid before:order-[0px_0.75rem_0.75rem] before:absolute before:top-[-0.75rem] before:left-[18.25rem] before:my-0 before:mx-auto before:w-[1.5rem] before:pt-[3rem] ${moreNavVisible ? "" : "hidden"}`}>
                                     <nav className="bg-white rounded-[0.75rem] shadow-[rgba(103,113,133,0.4)_0.75rem_1.5rem_4rem] flex justify-between p-[1.5rem]">
                                         <div className="mr-[1.25rem] w-[8.125rem]">
                                             <p className="text-[#121d33] mb-[1.25rem] capitalize font-semibold text-[1.125rem] leading-[1.5rem] m-0">
                                                 Products
                                             </p>
                                             <ul>
-                                               <li className="mb-[1rem]">
-                                                    <a className="bg-transparent bg-no-repeat bg-[right_0.1875rem_top_0.5625rem] rounded-[0.25rem] text-[#677185] inline-flex items-center text-[1rem] leading-[1.5rem] my-0 mx-[-0.25rem] py-[0.25rem] px-[0.5rem] relative transition-colors duration-300 whitespace-nowrap">
-                                                        Wallet
+                                               {Products.map(product => 
+                                                <li key={product.id} className="mb-[1rem]">
+                                                    <a className="bg-transparent bg-no-repeat bg-[right_0.1875rem_top_0.5625rem] rounded-[0.25rem] text-[#677185] inline-flex items-center text-[1rem] leading-[1.5rem] my-0 mx-[-0.25rem] py-[0.25rem] px-[0.5rem] relative transition-colors duration-300 whitespace-nowrap hover:bg-right-arrow hover:bg-[#f0f2f7] hover:text-[#353f52] hover:pr-[1.25rem] hover:text-shadow">
+                                                        {product.name}
                                                     </a>
-                                               </li> 
+                                               </li>
+                                               )} 
+                                            </ul>
+                                        </div>
+                                        <div className="mr-[1.25rem] w-[8.125rem]">
+                                            <p className="text-[#121d33] mb-[1.25rem] capitalize font-semibold text-[1.125rem] leading-[1.5rem] m-0">
+                                                Resources
+                                            </p>
+                                            <ul>
+                                               {Products.map(resource => 
+                                                <li key={resource.id} className="mb-[1rem]">
+                                                    <a className="bg-transparent bg-no-repeat bg-[right_0.1875rem_top_0.5625rem] rounded-[0.25rem] text-[#677185] inline-flex items-center text-[1rem] leading-[1.5rem] my-0 mx-[-0.25rem] py-[0.25rem] px-[0.5rem] relative transition-colors duration-300 whitespace-nowrap hover:bg-right-arrow hover:bg-[#f0f2f7] hover:text-[#353f52] hover:pr-[1.25rem] hover:text-shadow">
+                                                        {resource.name}
+                                                    </a>
+                                               </li>
+                                               )} 
+                                            </ul>
+                                        </div>
+                                        <div className="mr-[1.25rem] w-[8.125rem]">
+                                            <p className="text-[#121d33] mb-[1.25rem] capitalize font-semibold text-[1.125rem] leading-[1.5rem] m-0">
+                                                Company
+                                            </p>
+                                            <ul>
+                                               {Company.map(company => 
+                                                <li key={company.id} className="mb-[1rem]">
+                                                    <a className="bg-transparent bg-no-repeat bg-[right_0.1875rem_top_0.5625rem] rounded-[0.25rem] text-[#677185] inline-flex items-center text-[1rem] leading-[1.5rem] my-0 mx-[-0.25rem] py-[0.25rem] px-[0.5rem] relative transition-colors duration-300 whitespace-nowrap hover:bg-right-arrow hover:bg-[#f0f2f7] hover:text-[#353f52] hover:pr-[1.25rem] hover:text-shadow">
+                                                        {company.name}
+                                                    </a>
+                                               </li>
+                                               )} 
                                             </ul>
                                         </div>
                                     </nav>

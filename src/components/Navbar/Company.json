@@ -1,0 +1,25 @@
+[
+
+    {
+        "id" : "1",
+        "name" : "About"
+    },
+    {
+        "id" : "2",
+        "name" :"Careers"
+    },
+    {
+        "id" : "3",
+        "name" : "Press Center"
+    },
+    {
+        "id" : "4",
+        "name" : "Prime"
+    },
+    {
+        "id" : "5",
+        "name" : "Ventures"
+    }
+
+
+]

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage : {
+        "right-arrow" : "url('src/assets/icon-chevron-right.svg')"
+      },
       transitionProperty: {
         "background" : "background",
         "pr" : "padding-right"
