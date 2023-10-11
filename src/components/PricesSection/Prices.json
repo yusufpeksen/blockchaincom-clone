@@ -1,0 +1,35 @@
+[
+    {
+        "id" : "1",
+        "name" : "Bitcoin",
+        "short" : "BTC",
+        "price" : "$27,443.72",
+        "change" : "-0.01%",
+        "logo" : "src/assets/prices-btc.svg"
+    },
+    {
+        "id" : "2",
+        "name" : "Ethereum",
+        "short" : "ETH",
+        "price" : "$1,572.04",
+        "change" : "-0.90%",
+        "logo" : "src/assets/prices-eth.svg"
+    },
+    {
+        "id" : "3",
+        "name" : "Stellar",
+        "short" : "XLM",
+        "price" : "$0.10",
+        "change" : "-1.42%",
+        "logo" : "src/assets/prices-xlm.svg"
+    },
+    {
+        "id" : "4",
+        "name" : "Solana",
+        "short" : "SOL",
+        "price" : "$22.14",
+        "change" : "-0.36%",
+        "logo" : "src/assets/prices-sol.svg"
+    }
+
+]

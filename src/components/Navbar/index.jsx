@@ -198,7 +198,7 @@ export default function Navbar() {
                         </button>
                     </a>
                     <a className="mr-[1.25rem] h-11 text-[#121D33]">
-                        <button className="w-auto text-[14p] h-11 py-[10px] px-[14px] inline-flex justify-center items-center font-medium tracking-[0.01rem] leading-[144%] rounded-[0.5rem] border-[0.125rem] border-transparent cursor-pointer transition-all ease duration-300 whitespace-nowrap text-[#121d33] bg-white hover:bg-[#dfe3eb]">
+                        <button className="w-auto text-[14px] h-11 py-[10px] px-[14px] inline-flex justify-center items-center font-medium tracking-[0.01rem] leading-[144%] rounded-[0.5rem] border-[0.125rem] border-transparent cursor-pointer transition-all ease duration-300 whitespace-nowrap text-[#121d33] bg-white hover:bg-[#dfe3eb]">
                             Sign Up
                         </button>
                     </a>
